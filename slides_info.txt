@@ -1,0 +1,120 @@
+# NeonFind senior-review presentation prompt
+
+Copy the prompt below into your slide-generation tool. Attach the four images from `docs/assets` when the tool supports attachments. Replace `[Your name]` before presenting.
+
+---
+
+Create a polished 12-slide, 16:9 presentation titled **NeonFind — Multi-store Product Discovery and Comparison** for a technical senior or project supervisor. Presenter: **[Your name]**. The purpose is to demonstrate the working local application, explain the backend design, and request feedback and API access for the next integration phase. Target a 10–12 minute presentation. Include speaker notes of approximately 45–60 seconds per slide.
+
+Use the application's visual style: charcoal backgrounds (#101114), neon lime accents (#c4f563), subtle violet accents (#b194f5), readable white text, and plenty of spacing. Keep text concise, with three to five bullets where useful. Prefer screenshots, clear diagrams, and comparison tables to dense text. Use restrained glow effects that preserve readability.
+
+## Accuracy requirements
+
+- The application is a working local MVP. Real signup/login, guest browsing, saved products, search history, product search, filtering, comparison, and calculated recommendations are connected to FastAPI.
+- The catalog currently contains **8 sample products, 23 sample offers, and 5 represented stores**: Daraz, Amazon, PriceOye, Telemart, and AliExpress. These are illustrative fixtures, not verified current marketplace listings. Label every price example and catalog screenshot as sample data.
+- Configurable provider adapters and concurrent fetching are implemented and tested with simulated responses. Actual marketplace credentials, permissions, custom signing, and response normalization still need to be added. Do not claim that the application currently scrapes every website or has working live Daraz/Amazon integrations.
+- Recommendations use an explainable weighted algorithm and fuzzy text matching. They are not a trained AI model, a probability of satisfaction, or proven personalized recommendations.
+- **36 automated backend tests passed**. The frontend syntax/build checks and browser journeys were also verified. Do not invent latency benchmarks, load-test results, user counts, business savings, revenue, deployment status, or production-security certification.
+- Do not display passwords, tokens, secrets, private database records, or API credentials. Do not invent an actual presentation date, budget, integration deadline, or third-party partnership.
+
+## Slide-by-slide content
+
+### 1. Project introduction
+
+Title: **NeonFind: Find it. Compare it. Choose confidently.**
+
+Show a clean application screenshot or a simplified product-search visual. Subtitle: “Frontend + Python FastAPI backend — local MVP review.” Include presenter name and a small “Sample catalog” label. Explain the intended outcome: one interface for discovering products, comparing delivery-inclusive offers, and understanding recommendation scores.
+
+### 2. The shopping problem
+
+Explain the difficulty of comparing products across multiple stores: many browser tabs, different prices, delivery charges, inconsistent product names, and unclear recommendations. Show a simple fragmented-shopping diagram. Describe the problem qualitatively; use no unsupported statistics.
+
+### 3. The user journey
+
+Create a horizontal journey diagram:
+
+**Sign up / Log in / Browse as guest → Search → Filter → Compare offers → Save a product**.
+
+Explain that registered users have persistent saved products and recent searches. Guest lists remain local to the browser. Searches tolerate common misspellings and selected aliases. Product cards and comparison views show ranked results and total prices.
+
+### 4. Frontend demonstration
+
+Use the real screenshots:
+
+- `docs/assets/login.png` — login and account entry.
+- `docs/assets/dashboard.png` — product discovery and filters.
+- `docs/assets/offers.png` — store offers including delivery charges.
+- `docs/assets/comparison.png` — side-by-side product comparison.
+
+Create a balanced screenshot layout, with a larger discovery image and smaller supporting images if all four fit. Label the catalog images “Sample data.” Highlight the dark neon theme, responsive layout, and working account/search/comparison flow. If attachments are unavailable, use clearly labeled screenshot placeholders; do not fabricate screenshots.
+
+### 5. Backend architecture
+
+Draw this architecture accurately:
+
+**Browser frontend → FastAPI routes → Authentication / Catalog / Ranking services → SQLite through async SQLAlchemy**.
+
+Show two catalog paths: **current demo mode → sample JSON catalog** and **live mode → configured HTTPX provider adapters → permitted marketplace APIs**. Mark external integrations as “Pending API access and per-store adapters.” Show the in-process cache alongside the catalog service.
+
+Mention FastAPI/Uvicorn for routing and serving; Pydantic/Pydantic Settings for validation/configuration; SQLAlchemy + aiosqlite for async persistence. The project was verified locally with Python 3.14.6. Avoid implying distributed scalability from asynchronous code alone.
+
+### 6. Accounts and data persistence
+
+Show a five-table diagram: **users, auth_sessions, catalog_products, saved_finds, search_history**. Users relate to sessions, saves, and history; saved finds also reference catalog products. Product offers are stored in the catalog product JSON payload, not in a separate offers table.
+
+Explain Argon2 password hashing using pwdlib, a JWT held in an HttpOnly SameSite=Strict cookie, and database-backed session revocation on logout. Secure cookies are enabled in production mode. Account endpoints require authentication and enforce user ownership. Configuration restricts allowed browser origins. Present these as implemented safeguards, not a claim of production readiness.
+
+### 7. Explainable search and ranking
+
+Use a weighted bar or simple formula:
+
+**Relevance 40% + Bayesian rating 25% + price value 20% + review volume 10% + delivery 5%**.
+
+Explain RapidFuzz-based matching with the tested example **“headphons” → two matching headphone products** in the sample catalog. Mention aliases such as “airbuds” → “earbuds.” Rating uses a prior, price value uses a category comparison, and review volume is dampened logarithmically. The returned score includes component scores and reasons. Scores depend on the available catalog and filters; they are rule-based ranking scores, not confidence probabilities.
+
+### 8. Comparing the actual payable price
+
+Show this illustrative Sony WH-1000XM5 example in a table:
+
+| Sample store | Product price | Delivery | Total |
+| --- | ---: | ---: | ---: |
+| Daraz | PKR 74,999 | PKR 0 | PKR 74,999 |
+| Amazon | PKR 82,199 | PKR 2,000 | PKR 84,199 |
+
+The sample difference is **PKR 9,200**. Clearly state “Illustrative fixture prices — not current marketplace prices.” Explain that budget filters, price sorting, and best-offer selection use delivery-inclusive totals. Amounts currently use whole-rupee PKR integers; multi-currency conversion is future work.
+
+### 9. Provider integration and failure handling
+
+Create a pipeline diagram: **query → concurrent provider requests → validation and canonical product merging → ranking → cache → response**.
+
+Explain HTTPX for asynchronous HTTP, Tenacity for at most two attempts on selected transient failures, a 10-second per-provider deadline, and a 60-second in-process result cache. Healthy providers can return partial results with an availability warning. If all configured providers fail or none are configured in live mode, searches return a service-unavailable response. Live searches do not silently substitute sample products.
+
+Mention bounded JSON responses, allowed store-link domains, external configuration, and environment-held credentials. Matching canonical IDs and normalized product identity are required when merging offers. Real marketplace integrations require permitted API access and store-specific implementation. Do not show invented API endpoints as working connections.
+
+### 10. Verification and engineering tools
+
+Present **36 passing backend tests**, frontend syntax/build checks, and real browser verification. Use a compact test matrix covering authentication and logout revocation, account isolation, saved/history persistence, fuzzy search and filters, delivery-inclusive budgets, comparison limits, ranking explanations, provider retries, concurrent fetching, partial outages, and unavailable live mode.
+
+Mention pytest/pytest-asyncio and HTTPX MockTransport for tests; Ruff for formatting/linting; cachetools for bounded caching; structlog for sanitized structured logs. Provider tests used simulated responses. Browser checks covered real signup, reload persistence, comparison, logout, and the separate frontend's credentialed connection to FastAPI. Avoid invented coverage percentages or performance charts.
+
+### 11. Implemented now and planned next
+
+Use a two-column table:
+
+**Implemented:** dark neon UI; real accounts and revocable sessions; async SQLite persistence; search/filter/compare; saved products/history; explainable weighted ranking; generic provider adapters; automated tests; local preview and API documentation.
+
+**Planned:** official marketplace access and store-specific adapters; verified live prices; email verification/password recovery; price-alert delivery; PostgreSQL with migration/upsert support; Redis/shared rate limiting for multi-process deployment; trained recommendation experiments if justified; staging deployment and operational monitoring.
+
+Make clear that these are future tasks, not existing functionality. The current database implementation is SQLite-specific and needs adaptation before PostgreSQL support can be claimed.
+
+### 12. Senior feedback and next decisions
+
+Close with three concrete requests: **review the architecture and ranking weights; help obtain permitted marketplace API access; agree on the first store integration and acceptance criteria**.
+
+Propose a milestone sequence without invented dates: validate one permitted API → implement its adapter and product identity mapping → verify live offers and failure handling → add a second source → evaluate staging readiness. End with an invitation for architecture and scope feedback. Include the local demo/API documentation addresses only as presenter notes: `http://localhost:8001/` and `http://localhost:8001/docs`; explain that they work on the presenter's machine while the server is running.
+
+## Final output requirements
+
+Deliver the 12-slide deck with editable text, useful diagrams, the attached real screenshots, and speaker notes. Add a short demonstration checklist in the final slide's notes: sign up or log in; search “headphons”; inspect offers; compare two products; save one; reload to show persistence; log out. Prepare a concise answer in the notes to “Why use this stack?”: FastAPI validation/docs and async I/O, SQLAlchemy persistence, Argon2 authentication, HTTPX/Tenacity provider resilience, and transparent fuzzy ranking make the next API integration phase reviewable.
+
+Use these project documents as the source of truth if supplied: root `README.md`, `backend/README.md`, `docs/ARCHITECTURE.md`, and `docs/VERIFICATION.md`. If a fact is unsupported, label it as planned or omit it. Keep the narrative honest: a functioning local backend and UI with sample data, ready for permitted marketplace integration work.
