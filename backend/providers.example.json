@@ -1,0 +1,29 @@
+[
+  {
+    "store": "daraz",
+    "enabled": false,
+    "endpoint": "https://your-approved-provider.example/api/products",
+    "api_key_env": "DARAZ_API_KEY",
+    "auth_header": "Authorization",
+    "auth_prefix": "Bearer ",
+    "query_param": "q"
+  },
+  {
+    "store": "amazon",
+    "enabled": false,
+    "endpoint": "https://your-approved-provider.example/api/products",
+    "api_key_env": "AMAZON_API_KEY",
+    "auth_header": "Authorization",
+    "auth_prefix": "Bearer ",
+    "query_param": "q"
+  },
+  {
+    "store": "alibaba",
+    "enabled": false,
+    "endpoint": "https://your-approved-api.example/alibaba/products",
+    "api_key_env": "ALIBABA_API_KEY",
+    "auth_header": "Authorization",
+    "auth_prefix": "Bearer ",
+    "query_param": "q"
+  }
+]

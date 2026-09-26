@@ -1,0 +1,361 @@
+[
+  {
+    "id": "sony-xm5",
+    "name": "Sony WH-1000XM5",
+    "subtitle": "Wireless noise-canceling headphones",
+    "brand": "Sony",
+    "category": "audio",
+    "art": "headphones",
+    "price": 74999,
+    "oldPrice": 89999,
+    "rating": 4.9,
+    "reviews": 1248,
+    "score": 98,
+    "badge": "Best overall",
+    "tags": "headphones wireless bluetooth noise cancelling anc over ear sony music",
+    "shipping": true,
+    "offers": [
+      {
+        "store": "daraz",
+        "price": 74999,
+        "shipping": "Free delivery",
+        "delivery": "3–5 days",
+        "shippingFee": 0,
+        "currency": "PKR",
+        "source": "demo"
+      },
+      {
+        "store": "priceoye",
+        "price": 78499,
+        "shipping": "Free delivery",
+        "delivery": "2–4 days",
+        "shippingFee": 0,
+        "currency": "PKR",
+        "source": "demo"
+      },
+      {
+        "store": "amazon",
+        "price": 82199,
+        "shipping": "Rs. 2,000 delivery",
+        "delivery": "7–12 days",
+        "shippingFee": 2000,
+        "currency": "PKR",
+        "source": "demo"
+      },
+      {
+        "store": "telemart",
+        "price": 80999,
+        "shipping": "Rs. 250 delivery",
+        "delivery": "3–5 days",
+        "shippingFee": 250,
+        "currency": "PKR",
+        "source": "demo"
+      }
+    ],
+    "source": "demo"
+  },
+  {
+    "id": "airpods-pro",
+    "name": "Apple AirPods Pro 2",
+    "subtitle": "Small size. Seriously big sound.",
+    "brand": "Apple",
+    "category": "audio",
+    "art": "earbuds",
+    "price": 59999,
+    "oldPrice": 69999,
+    "rating": 4.8,
+    "reviews": 986,
+    "score": 95,
+    "badge": "Popular pick",
+    "tags": "earbuds headphones apple airpods pro wireless bluetooth anc audio",
+    "shipping": true,
+    "offers": [
+      {
+        "store": "priceoye",
+        "price": 59999,
+        "shipping": "Free delivery",
+        "delivery": "2–4 days",
+        "shippingFee": 0,
+        "currency": "PKR",
+        "source": "demo"
+      },
+      {
+        "store": "daraz",
+        "price": 62499,
+        "shipping": "Free delivery",
+        "delivery": "3–5 days",
+        "shippingFee": 0,
+        "currency": "PKR",
+        "source": "demo"
+      },
+      {
+        "store": "telemart",
+        "price": 63999,
+        "shipping": "Rs. 250 delivery",
+        "delivery": "3–5 days",
+        "shippingFee": 250,
+        "currency": "PKR",
+        "source": "demo"
+      }
+    ],
+    "source": "demo"
+  },
+  {
+    "id": "jbl-flip",
+    "name": "JBL Flip 6",
+    "subtitle": "Portable sound. Made for anywhere.",
+    "brand": "JBL",
+    "category": "audio",
+    "art": "speaker",
+    "price": 27499,
+    "oldPrice": 34999,
+    "rating": 4.7,
+    "reviews": 754,
+    "score": 92,
+    "badge": "Best value",
+    "tags": "speaker jbl flip portable bluetooth wireless waterproof audio music",
+    "shipping": false,
+    "offers": [
+      {
+        "store": "daraz",
+        "price": 27499,
+        "shipping": "Rs. 200 delivery",
+        "delivery": "3–5 days",
+        "shippingFee": 200,
+        "currency": "PKR",
+        "source": "demo"
+      },
+      {
+        "store": "aliexpress",
+        "price": 29899,
+        "shipping": "Rs. 500 delivery",
+        "delivery": "10–15 days",
+        "shippingFee": 500,
+        "currency": "PKR",
+        "source": "demo"
+      },
+      {
+        "store": "telemart",
+        "price": 31499,
+        "shipping": "Rs. 250 delivery",
+        "delivery": "3–5 days",
+        "shippingFee": 250,
+        "currency": "PKR",
+        "source": "demo"
+      }
+    ],
+    "source": "demo"
+  },
+  {
+    "id": "galaxy-watch",
+    "name": "Samsung Galaxy Watch6",
+    "subtitle": "Your everyday wellness companion",
+    "brand": "Samsung",
+    "category": "wearables",
+    "art": "watch",
+    "price": 42999,
+    "oldPrice": 53999,
+    "rating": 4.6,
+    "reviews": 432,
+    "score": 90,
+    "badge": "Trending",
+    "tags": "smartwatch watch wearable samsung galaxy fitness health android",
+    "shipping": true,
+    "offers": [
+      {
+        "store": "priceoye",
+        "price": 42999,
+        "shipping": "Free delivery",
+        "delivery": "2–4 days",
+        "shippingFee": 0,
+        "currency": "PKR",
+        "source": "demo"
+      },
+      {
+        "store": "daraz",
+        "price": 45999,
+        "shipping": "Free delivery",
+        "delivery": "3–5 days",
+        "shippingFee": 0,
+        "currency": "PKR",
+        "source": "demo"
+      },
+      {
+        "store": "amazon",
+        "price": 47499,
+        "shipping": "Rs. 2,000 delivery",
+        "delivery": "7–12 days",
+        "shippingFee": 2000,
+        "currency": "PKR",
+        "source": "demo"
+      }
+    ],
+    "source": "demo"
+  },
+  {
+    "id": "iphone-15",
+    "name": "Apple iPhone 15",
+    "subtitle": "128 GB · A little more extraordinary",
+    "brand": "Apple",
+    "category": "phones",
+    "art": "phone",
+    "price": 209999,
+    "oldPrice": 229999,
+    "rating": 4.8,
+    "reviews": 864,
+    "score": 94,
+    "badge": "Popular pick",
+    "tags": "phone smartphone mobile iphone apple ios camera 128gb",
+    "shipping": true,
+    "offers": [
+      {
+        "store": "priceoye",
+        "price": 209999,
+        "shipping": "Free delivery",
+        "delivery": "2–4 days",
+        "shippingFee": 0,
+        "currency": "PKR",
+        "source": "demo"
+      },
+      {
+        "store": "daraz",
+        "price": 217999,
+        "shipping": "Free delivery",
+        "delivery": "3–5 days",
+        "shippingFee": 0,
+        "currency": "PKR",
+        "source": "demo"
+      },
+      {
+        "store": "telemart",
+        "price": 219499,
+        "shipping": "Rs. 250 delivery",
+        "delivery": "3–5 days",
+        "shippingFee": 250,
+        "currency": "PKR",
+        "source": "demo"
+      }
+    ],
+    "source": "demo"
+  },
+  {
+    "id": "macbook-air",
+    "name": "MacBook Air M2",
+    "subtitle": "13-inch · Powerfully light.",
+    "brand": "Apple",
+    "category": "computing",
+    "art": "laptop",
+    "price": 274999,
+    "oldPrice": 309999,
+    "rating": 4.9,
+    "reviews": 613,
+    "score": 97,
+    "badge": "Best overall",
+    "tags": "laptop computer macbook air apple m2 notebook 13 inch",
+    "shipping": true,
+    "offers": [
+      {
+        "store": "telemart",
+        "price": 274999,
+        "shipping": "Free delivery",
+        "delivery": "3–5 days",
+        "shippingFee": 0,
+        "currency": "PKR",
+        "source": "demo"
+      },
+      {
+        "store": "daraz",
+        "price": 282999,
+        "shipping": "Free delivery",
+        "delivery": "3–5 days",
+        "shippingFee": 0,
+        "currency": "PKR",
+        "source": "demo"
+      },
+      {
+        "store": "amazon",
+        "price": 279999,
+        "shipping": "Rs. 3,000 delivery",
+        "delivery": "7–12 days",
+        "shippingFee": 3000,
+        "currency": "PKR",
+        "source": "demo"
+      }
+    ],
+    "source": "demo"
+  },
+  {
+    "id": "canon-r50",
+    "name": "Canon EOS R50",
+    "subtitle": "Capture the way you see the world.",
+    "brand": "Canon",
+    "category": "lifestyle",
+    "art": "camera",
+    "price": 184999,
+    "oldPrice": 204999,
+    "rating": 4.7,
+    "reviews": 287,
+    "score": 91,
+    "badge": "Creative pick",
+    "tags": "camera canon eos photography mirrorless video vlog lifestyle",
+    "shipping": false,
+    "offers": [
+      {
+        "store": "daraz",
+        "price": 184999,
+        "shipping": "Rs. 300 delivery",
+        "delivery": "3–5 days",
+        "shippingFee": 300,
+        "currency": "PKR",
+        "source": "demo"
+      },
+      {
+        "store": "amazon",
+        "price": 189999,
+        "shipping": "Rs. 2,000 delivery",
+        "delivery": "7–12 days",
+        "shippingFee": 2000,
+        "currency": "PKR",
+        "source": "demo"
+      }
+    ],
+    "source": "demo"
+  },
+  {
+    "id": "everyday-tote",
+    "name": "The Everyday Tote",
+    "subtitle": "Carry a little more possibility.",
+    "brand": "Everyday",
+    "category": "lifestyle",
+    "art": "bag",
+    "price": 2499,
+    "oldPrice": 3999,
+    "rating": 4.5,
+    "reviews": 193,
+    "score": 86,
+    "badge": "Budget find",
+    "tags": "bag tote fashion canvas lifestyle everyday shopping",
+    "shipping": false,
+    "offers": [
+      {
+        "store": "daraz",
+        "price": 2499,
+        "shipping": "Rs. 150 delivery",
+        "delivery": "3–5 days",
+        "shippingFee": 150,
+        "currency": "PKR",
+        "source": "demo"
+      },
+      {
+        "store": "aliexpress",
+        "price": 2899,
+        "shipping": "Rs. 300 delivery",
+        "delivery": "10–15 days",
+        "shippingFee": 300,
+        "currency": "PKR",
+        "source": "demo"
+      }
+    ],
+    "source": "demo"
+  }
+]
